@@ -7,7 +7,11 @@ const resultGrid = document.getElementById('result-grid');
 
 // load movies from API
 async function loadMovies(searchTerm){
-    const URL = `http://omdbapi.com/?s=${searchTerm}&page=1&apikey=fc1fef96`;
+     const imdbID = 'tt3896198'; // Example IMDb ID
+const apiKey = 'ce0e4ca5'; // Your API key
+
+const URL = `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`;
+
     const res = await fetch(`${URL}`);
     const data = await res.json();
     // console.log(data.Search);
