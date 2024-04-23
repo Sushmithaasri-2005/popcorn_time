@@ -5,9 +5,13 @@ const resultGrid = document.getElementById('result-grid');
 // load movies from API
 async function loadMovies(searchTerm) {
     const URL = `https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=ce0e4ca5`;
-    const res = await fetch(URL);
-    const data = await res.json();
-    if (data.Response == "True") displayMovieList(data.Search);
+    try {
+        const res = await fetch(URL);
+        const data = await res.json();
+        if (data.Response == "True") displayMovieList(data.Search);
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+    }
 }
 
 function findMovies() {
@@ -24,7 +28,7 @@ function displayMovieList(movies) {
     searchList.innerHTML = "";
     for (let idx = 0; idx < movies.length; idx++) {
         let movieListItem = document.createElement('div');
-        movieListItem.dataset.id = movies[idx].imdbID; // setting movie id in  data-id
+        movieListItem.dataset.id = movies[idx].imdbID;
         movieListItem.classList.add('search-list-item');
         let moviePoster = (movies[idx].Poster != "N/A") ? movies[idx].Poster : "image_not_found.png";
 
@@ -38,21 +42,21 @@ function displayMovieList(movies) {
         </div>
         `;
         searchList.appendChild(movieListItem);
-    }
-    loadMovieDetails();
-}
 
-function loadMovieDetails() {
-    const searchListMovies = searchList.querySelectorAll('.search-list-item');
-    searchListMovies.forEach(movie => {
-        movie.addEventListener('click', async () => {
+        // Add click event listener to each movie item
+        movieListItem.addEventListener('click', async () => {
             searchList.classList.add('hide-search-list');
             movieSearchBox.value = "";
-            const result = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=ce0e4ca5`);
-            const movieDetails = await result.json();
-            displayMovieDetails(movieDetails);
+            const movieID = movies[idx].imdbID;
+            try {
+                const result = await fetch(`https://www.omdbapi.com/?i=${movieID}&apikey=ce0e4ca5`);
+                const movieDetails = await result.json();
+                displayMovieDetails(movieDetails);
+            } catch (error) {
+                console.error('Error fetching movie details:', error);
+            }
         });
-    });
+    }
 }
 
 function displayMovieDetails(details) {
