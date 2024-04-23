@@ -155,3 +155,52 @@ stars.forEach(star => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    displayWatchlist();
+});
+
+// Function to add a movie to the watchlist
+function addToWatchlist() {
+    // Get the title of the movie displayed
+    const movieTitle = document.querySelector('.movie-title').textContent.trim();
+    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    watchlist.push(movieTitle);
+    localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    displayWatchlist(); // Update watchlist display
+}
+
+// Function to remove a movie from the watchlist
+function removeFromWatchlist(movieTitle) {
+    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    watchlist = watchlist.filter(title => title !== movieTitle);
+    localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    displayWatchlist(); // Update watchlist display
+}
+
+// Function to display the watchlist
+function displayWatchlist() {
+    const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    const watchlistElement = document.getElementById('watchlist');
+    watchlistElement.innerHTML = '';
+
+    if (watchlist.length === 0) {
+        watchlistElement.innerHTML = '<p>No movies in your watchlist.</p>';
+    } else {
+        watchlist.forEach(movieTitle => {
+            const li = document.createElement('li');
+            li.textContent = movieTitle;
+
+            // Add remove button
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.classList.add('remove-from-watchlist');
+            removeButton.onclick = function() {
+                removeFromWatchlist(movieTitle);
+            };
+            li.appendChild(removeButton);
+
+            watchlistElement.appendChild(li);
+        });
+    }
+}
