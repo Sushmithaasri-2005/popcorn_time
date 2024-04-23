@@ -393,3 +393,62 @@ img{
     color: #fff;
     margin-bottom: 10px;
 }
+
+.add-to-watchlist, .remove-from-watchlist {
+    padding: 10px 20px;
+    background-color: #3f51b5; /* Change to your desired button color */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-watchlist:hover, .remove-from-watchlist:hover {
+    background-color: #3145b7; 
+}
+
+#watchlist {
+    list-style: none;
+    padding: 0;
+}
+
+#watchlist li {
+    margin-bottom: 10px;
+}
+
+.remove-from-watchlist {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-from-watchlist:hover {
+    background-color: #3145b7;
+}
+
+#watchlist-section {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#watchlist-section h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#watchlist {
+    list-style: none;
+    padding: 0;
+}
+
+#watchlist li {
+    margin-bottom: 10px;
+}
