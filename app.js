@@ -36,7 +36,7 @@ document.getElementById("sign-in-form").addEventListener("submit", function(even
 
     // Check if both username and password are "admin"
     if (username === "admin" && password === "admin") {
-        window.location.href = "https://sushmithaasri-2005.github.io/popcorn_time/"; // Redirect if admin
+        window.location.href = "main.html"; // Redirect if admin
     } else {
         alert("Incorrect username or password. Please try again."); // Error message
     }
