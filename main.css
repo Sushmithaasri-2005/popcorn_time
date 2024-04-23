@@ -361,7 +361,7 @@ img{
 
 #review-form button {
     padding: 10px 20px;
-    background-color: #ffd700; /* Change to your desired button color */
+    background-color: #3f59ff; /* Change to your desired button color */
     border: none;
     border-radius: 8px;
     color: #000;
@@ -370,7 +370,7 @@ img{
 }
 
 #review-form button:hover {
-    background-color: #e5bb00; /* Change to your desired hover button color */
+    background-color: #293cb9; /* Change to your desired hover button color */
 }
 
 .reviews-section {
