@@ -295,3 +295,101 @@ img{
         margin-left: 0;
     }
 }
+
+
+.star {
+    color: #dacfcf; /* Default color */
+    cursor: pointer;
+}
+
+.star.filled {
+    color: #d0ce63; /* Filled color (white) */
+}
+
+.ratings-section {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.rating-stars {
+    font-size: 24px;
+}
+
+.rating-stars .star {
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating-stars .star:hover {
+    color: #ffd700; /* Change to your desired hover color */
+}
+
+.rating-stars .star.filled {
+    color: #ffd700; /* Change to your desired filled color */
+}
+
+.selected-rating {
+    color: #fff;
+    margin-top: 10px;
+}
+
+#review-form {
+    margin-top: 20px;
+}
+
+#review-text {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333333;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#review-text::placeholder {
+    color: #aaa;
+}
+
+#review-text:focus {
+    outline: none;
+    border-color: #ffd700; /* Change to your desired focus color */
+}
+
+#review-form button {
+    padding: 10px 20px;
+    background-color: #ffd700; /* Change to your desired button color */
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#review-form button:hover {
+    background-color: #e5bb00; /* Change to your desired hover button color */
+}
+
+.reviews-section {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.reviews-section h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#reviews-list {
+    list-style: none;
+    padding: 0;
+}
+
+#reviews-list li {
+    color: #fff;
+    margin-bottom: 10px;
+}
