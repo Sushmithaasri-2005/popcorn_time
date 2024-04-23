@@ -365,7 +365,7 @@ img{
 
 #review-form button {
     padding: 10px 20px;
-    background-color: #3f59ff; 
+    background-color: #7e23a1; 
     border: none;
     border-radius: 8px;
     color: #000;
@@ -378,7 +378,7 @@ img{
 }
 
 .reviews-section {
-    background-color: #2e2e2e;
+    background-color: var(--yellow-color);
     padding: 20px;
     border-radius: 8px;
 }
@@ -400,7 +400,7 @@ img{
 
 .add-to-watchlist, .remove-from-watchlist {
     padding: 10px 20px;
-    background-color: #3f51b5; /* Change to your desired button color */
+    background-color: #7e23a1; /* Change to your desired button color */
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -410,7 +410,7 @@ img{
 }
 
 .add-to-watchlist:hover, .remove-from-watchlist:hover {
-    background-color: #3145b7; 
+    background-color: #7e23a1; 
 }
 
 #watchlist {
@@ -425,7 +425,7 @@ img{
 .remove-from-watchlist {
     margin-left: 10px;
     padding: 5px 10px;
-    background-color: #3f51b5;
+    background-color: #7e23a1;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -433,11 +433,11 @@ img{
 }
 
 .remove-from-watchlist:hover {
-    background-color: #3145b7;
+    background-color: #7e23a1;
 }
 
 #watchlist-section {
-    background-color: #2e2e2e;
+    background-color: var(--yellow-color);
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
