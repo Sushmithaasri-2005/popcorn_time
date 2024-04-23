@@ -86,3 +86,72 @@ window.addEventListener('click', (event) => {
         searchList.classList.add('hide-search-list');
     }
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const stars = document.querySelectorAll(".star");
+    const ratingValue = document.querySelector(".rating-value");
+    const reviewForm = document.getElementById("review-form");
+    const reviewText = document.getElementById("review-text");
+    const reviewsList = document.getElementById("reviews-list");
+
+    let currentRating = 0;
+
+// Event listeners for rating stars
+stars.forEach(star => {
+    star.addEventListener("mouseover", function() {
+        highlightStars(parseInt(star.getAttribute("data-value")));
+    });
+
+    star.addEventListener("click", function() {
+        currentRating = parseInt(star.getAttribute("data-value"));
+        ratingValue.textContent = currentRating;
+        highlightStars(currentRating);
+    });
+
+    star.addEventListener("mouseout", function() {
+        highlightStars(currentRating);
+    });
+});
+
+
+    // Highlight stars on mouseover
+    function highlightStars(index) {
+        stars.forEach((star, i) => {
+            if (i < index) {
+                star.classList.add("filled");
+            } else {
+                star.classList.remove("filled");
+            }
+        });
+    }
+
+    // Remove highlight from stars
+    function removeHighlight() {
+        stars.forEach(star => {
+            star.classList.remove("filled");
+        });
+        highlightStars(currentRating);
+    }
+
+    // Submit review form
+    reviewForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const reviewContent = reviewText.value.trim();
+        if (reviewContent && currentRating > 0) {
+            const reviewItem = document.createElement("li");
+            reviewItem.textContent = `Rating: ${currentRating}, Review: ${reviewContent}`;
+            reviewsList.appendChild(reviewItem);
+            // Clear the form
+            reviewText.value = "";
+            currentRating = 0;
+            removeHighlight();
+            ratingValue.textContent = currentRating;
+        } else {
+            alert("Please provide both rating and review content.");
+        }
+    });
+});
