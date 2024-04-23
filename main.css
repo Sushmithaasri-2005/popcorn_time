@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+/* 2e3036
+171717
+292929
+3f59ff */
 :root{
-    --md-dark-color: #2e3036;
-    --dark-color: #171717;
-    --light-dark-color: #292929;
-    --yellow-color: #3f59ff;
+    --md-dark-color: #872341;
+    --dark-color: #22092C;
+    --light-dark-color: #7e23a1;
+    --yellow-color: #F05941;
 }
 *{
     padding: 0;
